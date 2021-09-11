@@ -9,18 +9,26 @@ class NewPackage extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: getProportionateScreenHeight(60),
+        leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         shape: ContinuousRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(60),
           ),
         ),
-        title: Center(
-          child: Text(
-            "NEW PACKAGE",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+        centerTitle: true,
+        title: Text(
+          "NEW PACKAGE",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
