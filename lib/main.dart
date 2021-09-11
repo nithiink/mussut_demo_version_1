@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mussut_demo_version_1/constants.dart';
 import 'package:mussut_demo_version_1/screens/newPackage.dart';
+import 'package:mussut_demo_version_1/screens/package102AS.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         accentColor: secondaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: NewPackage(),
+      home: Package102AS(),
     );
   }
 }
