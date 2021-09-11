@@ -145,9 +145,9 @@ class _BodyState extends State<Body> {
             ),
           ),
 
-          PickupCard(),
+          _PickupCard(),
+          _DropCard(),
 
-          DropCard(),
           SizedBox(
             height: getProportionateScreenHeight(30),
           ),
@@ -204,11 +204,7 @@ class _BodyState extends State<Body> {
   }
 }
 
-class DropCard extends StatelessWidget {
-  const DropCard({
-    Key? key,
-  }) : super(key: key);
-
+class _DropCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -242,7 +238,10 @@ class DropCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Icon(Icons.location_pin),
+                Icon(
+                  Icons.location_pin,
+                  color: secondaryColor,
+                ),
                 SizedBox(width: 5),
                 Text(
                   "Drop Address",
@@ -261,7 +260,7 @@ class DropCard extends StatelessWidget {
   }
 }
 
-class PickupCard extends StatelessWidget {
+class _PickupCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -295,7 +294,10 @@ class PickupCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Icon(Icons.location_pin),
+                Icon(
+                  Icons.location_pin,
+                  color: primaryColor,
+                ),
                 SizedBox(width: 5),
                 Text(
                   "Pickup Address 1",
@@ -309,7 +311,10 @@ class PickupCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Icon(Icons.location_pin),
+                Icon(
+                  Icons.location_pin,
+                  color: primaryColor,
+                ),
                 SizedBox(width: 5),
                 Text(
                   "Pickup Address 2",
@@ -323,7 +328,10 @@ class PickupCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Icon(Icons.location_pin),
+                Icon(
+                  Icons.location_pin,
+                  color: primaryColor,
+                ),
                 SizedBox(width: 5),
                 Text(
                   "Pickup Address 3",
