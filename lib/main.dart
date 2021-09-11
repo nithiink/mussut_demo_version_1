@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mussut_demo_version_1/constants.dart';
 import 'package:mussut_demo_version_1/screens/newPackage.dart';
 
 void main() {
@@ -13,7 +14,14 @@ class MyApp extends StatelessWidget {
       title: "Mussut",
       theme: ThemeData(
         fontFamily: "Google Sans",
+        textTheme: TextTheme(
+          bodyText1: TextStyle(
+            fontSize: 15,
+          ),
+        ),
         scaffoldBackgroundColor: Colors.white,
+        primaryColor: primaryColor,
+        accentColor: secondaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: NewPackage(),
