@@ -9,19 +9,21 @@ class Package102AS extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: getProportionateScreenHeight(60),
         leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios_new_rounded,
-            color: Colors.white,
-          ),
-          onPressed: () {},
-        ),
+            icon: Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
         shape: ContinuousRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(60),
           ),
         ),
-        titleSpacing: getProportionateScreenWidth(92),
+        centerTitle: true,
         title: Text(
           "PACKAGE 102AS",
           style: TextStyle(
