@@ -7,7 +7,12 @@ import '../sizeConfig.dart';
 import 'newPackage.dart';
 import 'package102AS.dart';
 
+late bool switchIsOn;
+
 class Home extends StatefulWidget {
+  Home(bool switchStatus) {
+    switchIsOn = switchStatus;
+  }
   @override
   _HomeState createState() => _HomeState();
 }
@@ -383,129 +388,131 @@ class _DailyReportCard extends StatelessWidget {
 }
 
 class _PackageDetailsCard extends StatelessWidget {
-  const _PackageDetailsCard({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      child: Container(
-        width: getProportionateScreenWidth(430),
-        height: getProportionateScreenHeight(80),
-        decoration: BoxDecoration(
-          border: Border.all(width: 1),
-          borderRadius: BorderRadius.circular(24),
-        ),
-        padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(20),
-            vertical: getProportionateScreenWidth(10)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "PACKAGE 102AS",
-                  style: TextStyle(
-                    color: secondaryColor,
-                    fontSize: getProportionateScreenWidth(14),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                RichText(
-                  text: TextSpan(
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Package102AS()));
+      },
+      child: Card(
+        elevation: 0,
+        child: Container(
+          width: getProportionateScreenWidth(430),
+          height: getProportionateScreenHeight(80),
+          decoration: BoxDecoration(
+            border: Border.all(width: 1),
+            borderRadius: BorderRadius.circular(24),
+          ),
+          padding: EdgeInsets.symmetric(
+              horizontal: getProportionateScreenWidth(20),
+              vertical: getProportionateScreenWidth(10)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "PACKAGE 102AS",
                     style: TextStyle(
                       color: secondaryColor,
-                      fontSize: getProportionateScreenWidth(16),
+                      fontSize: getProportionateScreenWidth(14),
                       fontWeight: FontWeight.bold,
                     ),
-                    children: [
-                      TextSpan(
-                        text: "Type: ",
-                        style: TextStyle(
-                          color: Colors.black87.withOpacity(0.8),
-                          fontSize: getProportionateScreenWidth(16),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      TextSpan(text: "Transfer"),
-                    ],
                   ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      color: Colors.yellowAccent[700],
-                      fontSize: getProportionateScreenWidth(16),
-                      fontWeight: FontWeight.w500,
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        color: secondaryColor,
+                        fontSize: getProportionateScreenWidth(16),
+                        fontWeight: FontWeight.bold,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: "Type: ",
+                          style: TextStyle(
+                            color: Colors.black87.withOpacity(0.8),
+                            fontSize: getProportionateScreenWidth(16),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        TextSpan(text: "Transfer"),
+                      ],
                     ),
-                    children: [
-                      TextSpan(
-                        text: "Size: ",
-                        style: TextStyle(
-                          color: Colors.black87.withOpacity(0.8),
-                          fontSize: getProportionateScreenWidth(16),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      TextSpan(text: "Medium"),
-                    ],
                   ),
-                ),
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      color: primaryColor,
-                      fontSize: getProportionateScreenWidth(16),
-                      fontWeight: FontWeight.w500,
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        color: Colors.yellowAccent[700],
+                        fontSize: getProportionateScreenWidth(16),
+                        fontWeight: FontWeight.w500,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: "Size: ",
+                          style: TextStyle(
+                            color: Colors.black87.withOpacity(0.8),
+                            fontSize: getProportionateScreenWidth(16),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        TextSpan(text: "Medium"),
+                      ],
                     ),
-                    children: [
-                      TextSpan(
-                        text: "Quantity: ",
-                        style: TextStyle(
-                          color: Colors.black87.withOpacity(0.8),
-                          fontSize: getProportionateScreenWidth(16),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      TextSpan(text: "12"),
-                    ],
                   ),
-                ),
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      color: Colors.red,
-                      fontSize: getProportionateScreenWidth(16),
-                      fontWeight: FontWeight.w500,
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        color: primaryColor,
+                        fontSize: getProportionateScreenWidth(16),
+                        fontWeight: FontWeight.w500,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: "Quantity: ",
+                          style: TextStyle(
+                            color: Colors.black87.withOpacity(0.8),
+                            fontSize: getProportionateScreenWidth(16),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        TextSpan(text: "12"),
+                      ],
                     ),
-                    children: [
-                      TextSpan(
-                        text: "Orders: ",
-                        style: TextStyle(
-                          color: Colors.black87.withOpacity(0.8),
-                          fontSize: getProportionateScreenWidth(16),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      TextSpan(text: "3"),
-                    ],
                   ),
-                ),
-                SizedBox(
-                  width: getProportionateScreenWidth(12),
-                )
-              ],
-            ),
-          ],
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: getProportionateScreenWidth(16),
+                        fontWeight: FontWeight.w500,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: "Orders: ",
+                          style: TextStyle(
+                            color: Colors.black87.withOpacity(0.8),
+                            fontSize: getProportionateScreenWidth(16),
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        TextSpan(text: "3"),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: getProportionateScreenWidth(12),
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -518,7 +525,6 @@ class _UserDetails extends StatefulWidget {
 }
 
 class _UserDetailsState extends State<_UserDetails> {
-  bool _switchIsOn = true;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -624,18 +630,23 @@ class _UserDetailsState extends State<_UserDetails> {
               Row(
                 children: [
                   Switch(
-                    value: _switchIsOn,
+                    value: switchIsOn,
                     activeColor: Colors.lightGreenAccent[700],
                     onChanged: (_switchIsOn) {
                       setState(() {
-                        this._switchIsOn = _switchIsOn;
+                        switchIsOn = _switchIsOn;
                       });
+                      if (_switchIsOn)
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => NewPackage()),
+                        );
                     },
                   ),
                   Text(
-                    _switchIsOn ? "Online" : "Offline",
+                    switchIsOn ? "Online" : "Offline",
                     style: TextStyle(
-                      color: _switchIsOn ? Colors.green : Colors.grey,
+                      color: switchIsOn ? Colors.green : Colors.grey,
                       fontSize: getProportionateScreenWidth(16),
                       fontWeight: FontWeight.bold,
                     ),

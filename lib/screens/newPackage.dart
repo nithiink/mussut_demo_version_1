@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mussut_demo_version_1/constants.dart';
 
 import '../sizeConfig.dart';
+import 'home.dart';
 
 class NewPackage extends StatelessWidget {
   @override
@@ -10,14 +11,6 @@ class NewPackage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: getProportionateScreenHeight(60),
-        leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back_ios_new_rounded,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            }),
         shape: ContinuousRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(60),
@@ -164,7 +157,10 @@ class _BodyState extends State<Body> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => Home(true)));
+                },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.grey[400],
                     fixedSize: Size(getProportionateScreenWidth(150),
@@ -180,7 +176,10 @@ class _BodyState extends State<Body> {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => Home(true)));
+                },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.green,
                     fixedSize: Size(getProportionateScreenWidth(160),

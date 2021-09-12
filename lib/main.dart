@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         accentColor: secondaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Home(),
+      home: Home(false),
     );
   }
 }
