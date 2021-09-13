@@ -2,10 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-import '../sizeConfig.dart';
-import 'newPackage.dart';
-import 'package102AS.dart';
+import '../../constants.dart';
+import '../../sizeConfig.dart';
+import '../New Package/newPackage.dart';
+import '../Package 102AS/package102AS.dart';
 
 late bool switchIsOn;
 
